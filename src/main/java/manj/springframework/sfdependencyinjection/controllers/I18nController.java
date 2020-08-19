@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 
 import manj.springframework.sfdependencyinjection.services.GreetingService;
 
-@Controller
+//@Controller
 public class I18nController {
 	private final GreetingService greetingService;
 

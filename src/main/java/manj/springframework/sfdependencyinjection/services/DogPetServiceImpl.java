@@ -3,7 +3,7 @@ package manj.springframework.sfdependencyinjection.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile({ "dog", "default" })
+//@Profile({ "dog", "default" })
 @Service
 public class DogPetServiceImpl implements PetService {
 
