@@ -13,6 +13,7 @@ import manj.springframework.sfdependencyinjection.controllers.PetController;
 import manj.springframework.sfdependencyinjection.controllers.PropertyInjectedController;
 import manj.springframework.sfdependencyinjection.controllers.SetterInjectedController;
 import manj.springframework.sfdependencyinjection.examplebeans.FakeDataSource;
+import manj.springframework.sfdependencyinjection.examplebeans.FakeJMSBroker;
 
 @ComponentScan(basePackages = "manj.springframework.sfdependencyinjection")
 @SpringBootApplication
@@ -57,6 +58,10 @@ public class SfDependencyInjectionApplication {
 		System.out.println("------Data Source");
 		FakeDataSource fakeDataSource =(FakeDataSource)ctx.getBean(FakeDataSource.class);
 		System.out.println("Datasource user :"+fakeDataSource.getUser());
+		
+		System.out.println("------JMS Broker");
+		FakeJMSBroker fakeJMSBroker =(FakeJMSBroker) ctx.getBean(FakeJMSBroker.class);
+		System.out.println("JMS user :"+fakeJMSBroker.getUsername());
 	}
 
 }
