@@ -12,6 +12,7 @@ import manj.springframework.sfdependencyinjection.controllers.MyController;
 import manj.springframework.sfdependencyinjection.controllers.PetController;
 import manj.springframework.sfdependencyinjection.controllers.PropertyInjectedController;
 import manj.springframework.sfdependencyinjection.controllers.SetterInjectedController;
+import manj.springframework.sfdependencyinjection.examplebeans.FakeDataSource;
 
 @ComponentScan(basePackages = "manj.springframework.sfdependencyinjection")
 @SpringBootApplication
@@ -52,6 +53,10 @@ public class SfDependencyInjectionApplication {
 		 * .getBean("constructorInjectedController");
 		 * System.out.println(constructorInjectedController.getGreeting());
 		 */
+		
+		System.out.println("------Data Source");
+		FakeDataSource fakeDataSource =(FakeDataSource)ctx.getBean(FakeDataSource.class);
+		System.out.println("Datasource user :"+fakeDataSource.getUser());
 	}
 
 }
