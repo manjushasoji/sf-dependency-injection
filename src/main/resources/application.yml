@@ -3,3 +3,8 @@ manj:
     username: JMS User
     password: JMSpass123
     jmsurl: dummyJMSurl
+ 
+--- #file separator
+manj:
+  jms:
+    username: Manj--ymlGerman
