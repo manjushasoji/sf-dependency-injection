@@ -14,14 +14,14 @@ import manj.springframework.sfdependencyinjection.examplebeans.FakeJMSBroker;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
-@PropertySources({
+/*@PropertySources({
 	@PropertySource("classpath:datasource.properties"),
 	@PropertySource("classpath:jms.properties")
-})
+})*/
 public class PropertyConfig {
 	
-	@Autowired
-	Environment env;
+	//@Autowired
+	//Environment env;
 	
 	@Value("${manj.username}")
 	String user;
@@ -44,7 +44,8 @@ public class PropertyConfig {
 	@Bean
 	public FakeDataSource fakeDataSource() {
 		FakeDataSource fakeDataSource = new FakeDataSource();
-		fakeDataSource.setUser(env.getProperty("USERNAME"));//set environmental var USERNAME , value
+		//fakeDataSource.setUser(env.getProperty("USERNAME"));//set environmental var USERNAME , value
+		fakeDataSource.setUser(user);
 		fakeDataSource.setPsw(password);
 		fakeDataSource.setUrl(url);
 		return fakeDataSource;
@@ -59,10 +60,10 @@ public class PropertyConfig {
 		return fakeJMSBroker;
 	}
 
-	@Bean
+	/*@Bean
 	public static PropertySourcesPlaceholderConfigurer properties() {
 		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
 		return propertySourcesPlaceholderConfigurer;
-	}
+	}*/
 
 }
