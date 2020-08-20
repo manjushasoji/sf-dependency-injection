@@ -1,0 +1,5 @@
+manj:
+  jms:
+    username: JMS User
+    password: JMSpass123
+    jmsurl: dummyJMSurl
